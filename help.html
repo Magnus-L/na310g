@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Help desk · ERC Stata</title>
+<meta name="description" content="Economics Research and Communication, applied econometrics in Stata: course site">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2212%22 fill=%22%23232b65%22/%3E%3Ctext x=%2232%22 y=%2242%22 font-family=%22sans-serif%22 font-size=%2228%22 font-weight=%22700%22 fill=%22white%22 text-anchor=%22middle%22%3ESt%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><b>ERC</b> <span>Applied econometrics in Stata</span></a>
+    <nav>
+      <a href="index.html">Course</a>
+      <a href="help.html">Help desk</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+<h1>Help desk</h1>
+<p class="subtitle">Drop in with your do-file and your question. No
+booking needed.</p>
+<p>The help desk is the fastest way to get unstuck: bring your laptop,
+the do-file and the log, and the exact error message or the number you
+do not understand.</p>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Time</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fri 23 Oct</td>
+<td>09:00–10:00</td>
+<td>N4008 (Nova House)</td>
+</tr>
+<tr>
+<td>Mon 26 Oct</td>
+<td>15:00–17:00</td>
+<td>N4008</td>
+</tr>
+<tr>
+<td>Tue 27 Oct</td>
+<td>09:00–10:00 and 15:00–16:00</td>
+<td>N4008</td>
+</tr>
+<tr>
+<td>Wed 28 Oct</td>
+<td>15:00–16:00</td>
+<td>N4008</td>
+</tr>
+<tr>
+<td>Thu 29 Oct</td>
+<td>09:00–10:00 and 15:00–16:00</td>
+<td>N4008</td>
+</tr>
+<tr>
+<td>Fri 30 Oct</td>
+<td>09:00–11:00 and 13:00–16:00</td>
+<td>N4008</td>
+</tr>
+<tr>
+<td>Mon 2 – Fri 6 Nov</td>
+<td>09:00–10:00 daily</td>
+<td>Zoom (link on Blackboard)</td>
+</tr>
+</tbody>
+</table>
+<p>Rooms can change at short notice; if so, it is announced on
+Blackboard. The lab room on Mon 26 Oct (10:15–15:00, T135) is also open
+for working on the report with help in the room.</p>
+<h2 id="getting-the-most-out-of-it">Getting the most out of it</h2>
+<ol type="1">
+<li>Run your do-file from the top first. Many problems disappear when
+the file runs in one go.</li>
+<li>Bring the smallest piece of code that shows the problem, and the
+error message.</li>
+<li>Say what you expected to see before you ran it. That is usually
+where the misunderstanding is.</li>
+</ol>
+</main>
+<footer class="wrap">
+  <p>Economics Research and Communication (module of NA310G, Economics, Advanced Course), Magnus Lodefalk's part:
+  applied econometrics in Stata. Örebro University, autumn 2026. Teacher: <a href="https://magnuslodefalk.com">Magnus Lodefalk</a>.</p>
+  <p>Written in plain text and built with pandoc. Updated 2026-10-01.</p>
+</footer>
+<script>
+document.querySelectorAll("pre").forEach(function (pre) {
+  var b = document.createElement("button");
+  b.className = "copy"; b.type = "button"; b.textContent = "Copy";
+  b.addEventListener("click", function () {
+    var txt = pre.querySelector("code") ? pre.querySelector("code").innerText : pre.innerText;
+    navigator.clipboard.writeText(txt).then(function () {
+      b.textContent = "Copied"; setTimeout(function () { b.textContent = "Copy"; }, 1500);
+    });
+  });
+  pre.appendChild(b);
+});
+</script>
+</body>
+</html>
