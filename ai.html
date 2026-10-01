@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI · ERC Stata</title>
+<meta name="description" content="Economics Research and Communication, applied econometrics in Stata: course site">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2212%22 fill=%22%23232b65%22/%3E%3Ctext x=%2232%22 y=%2242%22 font-family=%22sans-serif%22 font-size=%2228%22 font-weight=%22700%22 fill=%22white%22 text-anchor=%22middle%22%3ESt%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><b>ERC</b> <span>Applied econometrics in Stata</span></a>
+    <nav>
+      <a href="index.html">Course</a>
+      <a href="ai.html">AI in this course</a>
+      <a href="help.html">Help desk</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+<h1>AI in this course</h1>
+<p class="subtitle">Use it to learn faster, not to skip the
+learning.</p>
+<h2 id="what-is-allowed">What is allowed</h2>
+<p>You are allowed, and encouraged, to use generative AI tools in the
+learning process, and to improve the language of your report. You are
+<strong>not</strong> allowed to let an AI tool execute the analysis or
+write the report for you: that is plagiarism, and disciplinary action
+follows. If you are unsure where the line goes, ask at the help desk
+before you act.</p>
+<h2 id="why-this-matters">Why this matters</h2>
+<p>In a field experiment with about 1,000 students, a plain chatbot
+raised practice scores by 48% but lowered scores on a later exam without
+AI by 17%, and the students did not notice the loss. A version set up as
+a <em>tutor</em>, giving hints instead of answers, raised practice
+scores without the loss (Bastani et al., 2025, <em>PNAS</em> 122(26):
+e2422633122). Use AI the tutor way: the report is practice for your
+bachelor thesis, and you must be able to explain every number in it
+yourself.</p>
+<h2 id="five-rules-the-same-as-in-the-masters-course-na446a">Five rules,
+the same as in the master’s course NA446A</h2>
+<ol type="1">
+<li><strong>Try first yourself:</strong> write in a comment what the
+code should do.</li>
+<li><strong>Use AI to explain, debug or suggest an alternative</strong>,
+not to write your do-file.</li>
+<li><strong>Test</strong> what it gives you on a case where you know the
+answer.</li>
+<li><strong>Explain</strong> every line, and every number in your
+tables.</li>
+<li><strong>Own the result:</strong> mark lines in your do-file that
+came from AI with a comment <code>* AI:</code>; you answer for all of
+them.</li>
+</ol>
+<h2 id="safe-use">Safe use</h2>
+<ul>
+<li><strong>Never upload the course data, or any file made from it, to
+an AI tool.</strong> The data are licensed for this course only (you
+sign a commitment). Paste code and error messages, never data or output
+listings.</li>
+<li>A confident answer is not a correct one. Rule 3 applies to every
+answer, including Stata syntax that looks right.</li>
+</ul>
+<h2 id="what-you-hand-in-about-ai">What you hand in about AI</h2>
+<p>A short <strong>AI declaration</strong> in the appendix of your
+report, five lines at most:</p>
+<ol type="1">
+<li>which tools you used (name and version), or “none”;</li>
+<li>what you used them for (for example: explaining an error message,
+checking my interpretation of the Hausman test, improving the language
+of section 2);</li>
+<li>which lines in your do-file carry <code>* AI:</code>;</li>
+<li>what you checked yourself, and how;</li>
+<li>one thing the AI got wrong or that you changed.</li>
+</ol>
+<p>No prompt logs. The declaration and the <code>* AI:</code> tags
+replace them.</p>
+<h2 id="your-course-tutor-prompt">Your course tutor prompt</h2>
+<p>Paste this into your chatbot at the start of a conversation. It makes
+the chatbot give hints instead of solutions.</p>
+<pre class="text"><code>You are my tutor in a bachelor course in applied econometrics with Stata (panel data, fixed and
+random effects, tests, instrumental variables). I am learning, not delivering. Follow these rules
+in every answer:
+
+1. Do not write the do-file or the analysis for my task. Give me a hint, a question, or the name
+   of the Stata command or concept to look up. If I am still stuck after two hints, show a SMALL
+   example on a Wooldridge dataset (for example wagepan or card), never my own task.
+2. When I paste an error, ask me first what I think the error message says. Then point me to the
+   line and the concept, not the fix.
+3. When I paste output, ask me to interpret one coefficient in words (sign, size, unit,
+   significance) before you comment.
+4. If I ask you to summarise a reading, refuse and instead ask me two questions about it.
+5. Keep answers short. End every answer with one question that makes me think.
+6. Never ask me to paste my course data. It is licensed and may not be shared.</code></pre>
+</main>
+<footer class="wrap">
+  <p>Economics Research and Communication (module of NA310G, Economics, Advanced Course), Magnus Lodefalk's part:
+  applied econometrics in Stata. Örebro University, autumn 2026. Teacher: <a href="https://magnuslodefalk.com">Magnus Lodefalk</a>.</p>
+  <p>Written in plain text and built with pandoc. Updated 2026-10-01.</p>
+</footer>
+<script>
+document.querySelectorAll("pre").forEach(function (pre) {
+  var b = document.createElement("button");
+  b.className = "copy"; b.type = "button"; b.textContent = "Copy";
+  b.addEventListener("click", function () {
+    var txt = pre.querySelector("code") ? pre.querySelector("code").innerText : pre.innerText;
+    navigator.clipboard.writeText(txt).then(function () {
+      b.textContent = "Copied"; setTimeout(function () { b.textContent = "Copy"; }, 1500);
+    });
+  });
+  pre.appendChild(b);
+});
+</script>
+</body>
+</html>
