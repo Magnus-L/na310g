@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data · NA310G Stata</title>
+<meta name="description" content="Economics Research and Communication, applied econometrics in Stata: course site">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2212%22 fill=%22%23232b65%22/%3E%3Ctext x=%2232%22 y=%2242%22 font-family=%22sans-serif%22 font-size=%2228%22 font-weight=%22700%22 fill=%22white%22 text-anchor=%22middle%22%3ESt%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><b>NA310G</b> <span>Applied econometrics in Stata</span></a>
+    <nav>
+      <a href="index.html">Course</a>
+      <a href="data.html">Data</a>
+      <a href="ai.html">AI in this course</a>
+      <a href="help.html">Help desk</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+<h1>Data</h1>
+<p class="subtitle">You learn on a twin of a real research database, and
+you can use the real one for your thesis, free.</p>
+<h2 id="what-you-work-with-in-this-course">What you work with in this
+course</h2>
+<p>The labs and the report use a firm-year panel of about 1,800 large
+Swedish firms, 2008–2020. It combines three kinds of data that
+researchers use to study AI and work:</p>
+<ul>
+<li><strong>firm accounts</strong> from <strong>Serrano</strong>, the
+Swedish House of Finance’s database of company financials (employees,
+salaries, value added, sales, capital, industry, county);</li>
+<li><strong>job advertisements</strong> from Platsbanken, the Swedish
+Public Employment Service, with the skills each ad asks for, including
+AI skills;</li>
+<li><strong>occupational AI exposure</strong> measures from the research
+literature (Felten, Raj and Seamans 2021; Webb 2020), matched to the
+occupations the firm advertises for.</li>
+</ul>
+<p>The file you get is a <strong>synthetic twin</strong> of this
+research panel: the same variables, names, units and structure, and
+statistical properties close to the real data, but every firm in it is
+simulated, so it can be shared openly. The quirks of real accounts data
+are kept on purpose (negative values, firms with zero employees,
+outliers, firms that change industry), because handling them is part of
+the job: garbage in, garbage out.</p>
+<p>Download links follow before Lab 1.</p>
+<h2 id="serrano-for-your-bachelor-thesis-free-for-you">Serrano for your
+bachelor thesis: free for you</h2>
+<p><a
+href="https://www.houseoffinance.se/data-center/serrano/">Serrano</a> is
+a database with financial history at the company level since 1997, built
+on annual reports from the Swedish Companies Registration Office
+(Bolagsverket), company data from Statistics Sweden and bankruptcy
+information, and covering most legal forms of Swedish firms.
+<strong>Örebro University holds a licence</strong>, so as a student here
+you can download it yourself, at no cost, by logging in with your
+university account.</p>
+<ul>
+<li>Log in and download: <a
+href="https://data.houseoffinance.se/serrano/">data.houseoffinance.se/serrano</a>
+(choose Örebro University when asked for your institution).</li>
+<li>User manual: <a
+href="https://www.hhs.se/globalassets/shof/data-center/serrano/user-manual---serrano.pdf">how
+to download and unpack the files</a>. The yearly Stata release comes in
+seven parts that you unzip together (on a Mac, use for example The
+Unarchiver or Keka; on Windows, 7-Zip). The files are large (the main
+Stata file was about 19 GB in the 2023 release), so check your disk
+space first.</li>
+<li>Help: <a
+href="https://support.data.houseoffinance.se/">support.data.houseoffinance.se</a>.</li>
+<li>Cite it as: Weidenman, P. <em>The Serrano Database for Analysis and
+Register-Based Statistics</em>. Swedish House of Finance Research Data
+Center.</li>
+</ul>
+<p>After this course you already know the variables, the panel structure
+and the checks they need, so starting a thesis on Serrano is a small
+step.</p>
+<h2 id="public-data-you-can-combine-with-it">Public data you can combine
+with it</h2>
+<ul>
+<li><a
+href="https://www.statistikdatabasen.scb.se/pxweb/en/ssd/">Statistics
+Sweden’s database</a>: aggregates by industry, region and year, for
+example to add industry or county controls.</li>
+<li><a href="https://data.jobtechdev.se/">Platsbanken historical job
+ads</a> (JobTech, open data): more than 7 million ads published on
+Platsbanken since 2006.</li>
+<li><a href="https://www.onetcenter.org">O*NET</a>: what each occupation
+involves, the basis of most AI-exposure measures.</li>
+</ul>
+</main>
+<footer class="wrap">
+  <p>Economics Research and Communication (module of NA310G, Economics, Advanced Course), Magnus Lodefalk's part:
+  applied econometrics in Stata. Örebro University, autumn 2026. Teacher: <a href="https://magnuslodefalk.com">Magnus Lodefalk</a>.</p>
+  <p>Written in plain text and built with pandoc. Updated 2026-10-01.</p>
+</footer>
+<script>
+document.querySelectorAll("pre").forEach(function (pre) {
+  var b = document.createElement("button");
+  b.className = "copy"; b.type = "button"; b.textContent = "Copy";
+  b.addEventListener("click", function () {
+    var txt = pre.querySelector("code") ? pre.querySelector("code").innerText : pre.innerText;
+    navigator.clipboard.writeText(txt).then(function () {
+      b.textContent = "Copied"; setTimeout(function () { b.textContent = "Copy"; }, 1500);
+    });
+  });
+  pre.appendChild(b);
+});
+</script>
+</body>
+</html>
