@@ -67,3 +67,8 @@ button.copy:hover { color: var(--accent2); }
 @media (max-width: 520px) { .hero h1 { font-size: 1.9rem; } body { font-size: 16px; } }
 
 pre.text, pre.text code { white-space: pre-wrap; word-break: break-word; }
+
+/* Personal data lookup (my-data.html) */
+.lookup { margin: 1.5rem 0; padding: 1rem 1.25rem; border: 1px solid var(--line, #d8dbe6); border-radius: 10px; }
+.lookup input { font: inherit; font-size: 1.2rem; letter-spacing: .15em; text-transform: uppercase; width: 8.5em; padding: .35rem .5rem; margin: 0 .5rem; }
+.lookup #msg { margin: .75rem 0 0; }
