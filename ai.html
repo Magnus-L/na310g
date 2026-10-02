@@ -74,19 +74,28 @@ answer, including Stata syntax that looks right.</li>
 </ul>
 <h2 id="what-you-hand-in-about-ai">What you hand in about AI</h2>
 <p>A short <strong>AI declaration</strong> in the appendix of your
-report, five lines at most:</p>
+report, three lines, modelled on what economics journals ask of their
+authors:</p>
 <ol type="1">
-<li>which tools you used (name and version), or “none”;</li>
-<li>what you used them for (for example: explaining an error message,
-checking my interpretation of the Hausman test, improving the language
-of section 2);</li>
-<li>which lines in your do-file carry <code>* AI:</code>;</li>
-<li>what you checked yourself, and how;</li>
-<li>one thing the AI got wrong or that you changed (or “nothing
-found”).</li>
+<li><strong>Tools:</strong> which tools you used (name and version), or
+“none”. Spelling and grammar checkers need not be listed.</li>
+<li><strong>What for and how:</strong> for example, explaining an error
+message, checking my reading of the Hausman test, improving the language
+of section 2; and which lines in your do-files carry
+<code>* AI:</code>.</li>
+<li><strong>Responsibility:</strong> “I reviewed everything these tools
+produced, and I take full responsibility for the content of this report,
+including every line of code and every number.”</li>
 </ol>
-<p>No prompt logs. The declaration and the <code>* AI:</code> tags
-replace them.</p>
+<p>An example:</p>
+<pre class="text"><code>1. ChatGPT (GPT-5). 2. Explaining the error r(198) and checking my reading of the Hausman
+test; two lines in 4_regressions.do carry * AI:. 3. I reviewed everything these tools
+produced, and I take full responsibility for the content of this report, including every
+line of code and every number.</code></pre>
+<p>No prompt logs: the declaration and the <code>* AI:</code> tags
+replace them. The responsibility is real: you must be able to explain
+every line and number, and some students are invited to a short
+follow-up conversation about exactly that.</p>
 <h2 id="your-course-tutor-prompt">Your course tutor prompt</h2>
 <p>Paste this into your chatbot at the start of a conversation. It makes
 the chatbot give hints instead of solutions.</p>
