@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Your data · NA310G Stata</title>
+<meta name="description" content="Economics Research and Communication, applied econometrics in Stata: course site">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2212%22 fill=%22%23232b65%22/%3E%3Ctext x=%2232%22 y=%2242%22 font-family=%22sans-serif%22 font-size=%2228%22 font-weight=%22700%22 fill=%22white%22 text-anchor=%22middle%22%3ESt%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><b>NA310G</b> <span>Applied econometrics in Stata</span></a>
+    <nav>
+      <a href="index.html">Course</a>
+      <a href="data.html">Data</a>
+      <a href="report.html">The report</a>
+      <a href="ai.html">AI rules</a>
+      <a href="help.html">Help desk</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+<h1>Your data</h1>
+<p class="subtitle">Your own dataset and research question, from your
+personal code.</p>
+<p>Every student gets their own version of the course data: the same
+variables and the same kind of firms, but drawn separately, so your
+numbers are yours. With it comes your research question: which outcome
+you study, in which industry and which part of Sweden.</p>
+<p>Your <strong>personal code</strong> (six characters, for example
+<code>K7Q2MX</code>) is on Blackboard. It is also your identity in this
+course: write it on the cover page of your report and use it in your
+file names. Never write your name or personal identity number anywhere
+in the report, the do-files or the logs.</p>
+<div class="lookup">
+<label for="code"><b>Your code</b></label>
+<input id="code" maxlength="6" autocomplete="off" spellcheck="false" placeholder="K7Q2MX">
+<button id="go" class="btn primary" type="button">Get my data</button>
+<p id="msg" role="status">
+</p>
+</div>
+<p>The zip file holds your dataset (Stata and CSV), the codebook and
+your research question. Keep it to yourself: two students with the same
+research question still get different results, so a copied table does
+not fit your data.</p>
+<p>For the labs we all use the shared course dataset on the <a
+href="data.html">Data</a> page.</p>
+<script>
+(function () {
+  var input = document.getElementById("code"), msg = document.getElementById("msg");
+  async function sha256(text) {
+    var buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
+    return Array.from(new Uint8Array(buf)).map(function (b) { return b.toString(16).padStart(2, "0"); }).join("");
+  }
+  async function lookup() {
+    // Codes are case-insensitive and ignore spaces.
+    var code = input.value.replace(/\s/g, "").toUpperCase();
+    if (!/^[A-Z2-9]{6}$/.test(code)) { msg.textContent = "A code has six letters and digits. Check it on Blackboard."; return; }
+    msg.textContent = "Looking it up...";
+    // The file name is a hash of the code, so the list of files says nothing about the codes.
+    var url = "personal/" + (await sha256("na310g:" + code)).slice(0, 32) + ".zip";
+    var r = await fetch(url, { method: "HEAD", cache: "no-store" });
+    if (r.ok) {
+      msg.innerHTML = 'Found. <a class="btn" href="' + url + '" download="na310g_' + code + '.zip">Download na310g_' + code + '.zip</a>';
+    } else {
+      msg.textContent = "No dataset for this code. Check the code; if it is right, the files are not out yet, or e-mail magnus.lodefalk@oru.se with the code (not your name).";
+    }
+  }
+  document.getElementById("go").addEventListener("click", lookup);
+  input.addEventListener("keydown", function (e) { if (e.key === "Enter") lookup(); });
+})();
+</script>
+</main>
+<footer class="wrap">
+  <p>Economics Research and Communication (module of NA310G, Economics, Advanced Course), Magnus Lodefalk's part:
+  applied econometrics in Stata. Örebro University, autumn 2026. Teacher: <a href="https://magnuslodefalk.com">Magnus Lodefalk</a>.</p>
+  <p>Written in plain text and built with pandoc. Updated 2026-10-13.</p>
+</footer>
+<script>
+document.querySelectorAll("pre").forEach(function (pre) {
+  var b = document.createElement("button");
+  b.className = "copy"; b.type = "button"; b.textContent = "Copy";
+  b.addEventListener("click", function () {
+    var txt = pre.querySelector("code") ? pre.querySelector("code").innerText : pre.innerText;
+    navigator.clipboard.writeText(txt).then(function () {
+      b.textContent = "Copied"; setTimeout(function () { b.textContent = "Copy"; }, 1500);
+    });
+  });
+  pre.appendChild(b);
+});
+</script>
+</body>
+</html>
