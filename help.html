@@ -88,11 +88,29 @@ error message.</li>
 <li>Say what you expected to see before you ran it. That is usually
 where the misunderstanding is.</li>
 </ol>
+<h2 id="common-questions">Common questions</h2>
+<p><strong>Where do I work on my report, so I do not overwrite the lab
+files?</strong> Make a copy of the whole project folder (Mac: select it
+and press Cmd+D; Windows: copy and paste) and rename the copy
+<code>na310g-&lt;your code&gt;</code>. Do the report in the copy:</p>
+<ol type="1">
+<li>Check that your own data file,
+<code>na310g_data_&lt;your code&gt;.dta</code>, is in the copy’s
+<code>data/raw/</code>, next to
+<code>na310g_occupations_ssyk2012.dta</code> (the copy carries over what
+the lab folder had).</li>
+<li>In <code>1_load_check.do</code>, change the <code>use</code> line
+from <code>na310g_data_course.dta</code> to your own file.</li>
+<li>Always start by double-clicking the copy’s <code>master.do</code>.
+It sets <code>$root</code> to the folder Stata opens in. If Stata is
+already open from the lab folder, close it first; otherwise your report
+do-files write into the lab folder.</li>
+</ol>
 </main>
 <footer class="wrap">
   <p>Economics Research and Communication (module of NA310G, Economics, Advanced Course), Magnus Lodefalk's part:
   applied econometrics in Stata. Örebro University, autumn 2026. Teacher: <a href="https://magnuslodefalk.com">Magnus Lodefalk</a>.</p>
-  <p>Written in plain text and built with pandoc. Updated 2026-10-16.</p>
+  <p>Written in plain text and built with pandoc. Updated 2026-10-23.</p>
 </footer>
 <script>
 document.querySelectorAll("pre").forEach(function (pre) {
