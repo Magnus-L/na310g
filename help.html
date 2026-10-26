@@ -81,10 +81,14 @@ Blackboard. Lab 3 (Wed 28 Oct, 09:15–15:00, F103) is mostly help in the
 room after a short lab lecture.</p>
 <h2 id="from-the-lab-folder-to-your-report">From the lab folder to your
 report</h2>
-<p>You build the report by <strong>editing the lab do-files to fit your
-own question</strong>, in a copy of your lab folder. You do not start
-from scratch, you do not add new files next to the lab’s, and you do not
-need anything the lab question needed but yours does not.</p>
+<p>You build the report in a copy of your lab folder, with <strong>the
+same structure and the same key steps as the labs</strong>: the same
+do-files, in the same order, edited to fit your own question. You do not
+start from scratch, and you do not add new files next to the lab’s. The
+lab do-files are a model, not the answer: they show <em>how</em>; the <a
+href="instruction_assignment_HT26.pdf">instructions</a> say
+<em>what</em> your report must do, and they ask for more than the lab
+demo did (see step 3).</p>
 <p><strong>1. Copy.</strong> Make a copy of the whole project folder
 (Mac: select it and press Cmd+D; Windows: copy and paste) and rename the
 copy <code>na310g-&lt;your code&gt;</code>. Leave the lab folder as it
@@ -105,16 +109,19 @@ unchanged.</li>
 </ul>
 <p>Keep <code>master.do</code>, the folder <code>dofiles</code>,
 <code>README</code> and <code>report_checklist</code>.</p>
-<p><strong>3. Adapt each do-file to your question.</strong> The same
-files, in the same order; change what differs:</p>
+<p><strong>3. Adapt each do-file to your question, and do what the
+instructions ask, not only what the lab did:</strong></p>
 <ul>
 <li><code>1_load_check.do</code>: the <code>use</code> line reads your
 own file.</li>
-<li><code>2_sample_vars.do</code>: your industry (B1) and geography
-(B2), your outcome (B3), and the sample steps for your variables
-(B5).</li>
-<li><code>3_descriptives.do</code>: your variables, and the table’s
-title and note.</li>
+<li><code>2_sample_vars.do</code>: your industry (B1), geography (B2),
+outcome and controls (B3), and the sample steps (B5). Screen the data
+more carefully than the lab demo did: for each variable, how many
+firm-years are negative, zero or missing, what you do with them and why
+(instructions, section 5, “About variables in general”), and every step
+from the original file to your final sample (section 9, item 4).</li>
+<li><code>3_descriptives.do</code>: all variables in your final
+analysis, and the table’s title and note.</li>
 <li><code>4_regressions.do</code>: your outcome in every regression and
 in the table. Keep one table, the three-column one (pooled OLS, fixed
 effects, random effects); delete the Lab 1 table if it is still
