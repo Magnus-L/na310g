@@ -79,6 +79,65 @@ do not understand.</p>
 <p>Rooms can change at short notice; if so, it is announced on
 Blackboard. Lab 3 (Wed 28 Oct, 09:15–15:00, F103) is mostly help in the
 room after a short lab lecture.</p>
+<h2 id="from-the-lab-folder-to-your-report">From the lab folder to your
+report</h2>
+<p>You build the report by <strong>editing the lab do-files to fit your
+own question</strong>, in a copy of your lab folder. You do not start
+from scratch, you do not add new files next to the lab’s, and you do not
+need anything the lab question needed but yours does not.</p>
+<p><strong>1. Copy.</strong> Make a copy of the whole project folder
+(Mac: select it and press Cmd+D; Windows: copy and paste) and rename the
+copy <code>na310g-&lt;your code&gt;</code>. Leave the lab folder as it
+is, to look back at.</p>
+<p><strong>2. Clear out the labs, in the copy.</strong> Delete:</p>
+<ul>
+<li><code>lab1-catchup</code>, <code>lab2-catchup</code>,
+<code>check_lab1.do</code>, <code>check_lab2.do</code>,
+<code>ai_task_lab1</code> and <code>ai_task_lab2</code>;</li>
+<li>everything inside <code>data/processed</code>,
+<code>output/logs</code> and <code>output/tables</code> (old logs,
+tables and data files: <code>master.do</code> rebuilds them from your
+own data);</li>
+<li>in <code>data/raw</code>, the course dataset
+<code>na310g_data_course.dta</code>. Put your own
+<code>na310g_data_&lt;your code&gt;.dta</code> there instead,
+unchanged.</li>
+</ul>
+<p>Keep <code>master.do</code>, the folder <code>dofiles</code>,
+<code>README</code> and <code>report_checklist</code>.</p>
+<p><strong>3. Adapt each do-file to your question.</strong> The same
+files, in the same order; change what differs:</p>
+<ul>
+<li><code>1_load_check.do</code>: the <code>use</code> line reads your
+own file.</li>
+<li><code>2_sample_vars.do</code>: your industry (B1) and geography
+(B2), your outcome (B3), and the sample steps for your variables
+(B5).</li>
+<li><code>3_descriptives.do</code>: your variables, and the table’s
+title and note.</li>
+<li><code>4_regressions.do</code>: your outcome in every regression and
+in the table. Keep one table, the three-column one (pooled OLS, fixed
+effects, random effects); delete the Lab 1 table if it is still
+there.</li>
+<li><code>5_tests_iv.do</code>: the tests with your outcome. The IV part
+(G) only if you argue for an instrument.</li>
+<li>In each file, update the header (PURPOSE, CREATED) and make the
+comments say why <em>you</em> do each step.</li>
+</ul>
+<p><strong>4. The occupation file is optional.</strong> Your research
+question needs no merge: your outcome, <code>ai_firm</code> and the
+required controls are all in your own dataset. You need
+<code>na310g_occupations_ssyk2012.dta</code> only if you use an
+occupation variable, for example as an instrument (for a VG). If you do
+not, delete block B4 (the merge) in <code>2_sample_vars.do</code>, block
+G in <code>5_tests_iv.do</code>, and the occupation file in
+<code>data/raw</code>.</p>
+<p><strong>5. Run everything from the copy.</strong> Close Stata, then
+double-click the copy’s <code>master.do</code>: it sets
+<code>$root</code> to the folder Stata opens in, so if Stata is still
+open from the lab folder, your files write there. <code>master.do</code>
+must run from top to bottom without an error. Its log, with the
+verification line, goes in your appendix.</p>
 <h2 id="getting-the-most-out-of-it">Getting the most out of it</h2>
 <ol type="1">
 <li>Run your do-file from the top first. Many problems disappear when
@@ -90,22 +149,9 @@ where the misunderstanding is.</li>
 </ol>
 <h2 id="common-questions">Common questions</h2>
 <p><strong>Where do I work on my report, so I do not overwrite the lab
-files?</strong> Make a copy of the whole project folder (Mac: select it
-and press Cmd+D; Windows: copy and paste) and rename the copy
-<code>na310g-&lt;your code&gt;</code>. Do the report in the copy:</p>
-<ol type="1">
-<li>Check that your own data file,
-<code>na310g_data_&lt;your code&gt;.dta</code>, is in the copy’s
-<code>data/raw/</code>, next to
-<code>na310g_occupations_ssyk2012.dta</code> (the copy carries over what
-the lab folder had).</li>
-<li>In <code>1_load_check.do</code>, change the <code>use</code> line
-from <code>na310g_data_course.dta</code> to your own file.</li>
-<li>Always start by double-clicking the copy’s <code>master.do</code>.
-It sets <code>$root</code> to the folder Stata opens in. If Stata is
-already open from the lab folder, close it first; otherwise your report
-do-files write into the lab folder.</li>
-</ol>
+files?</strong> In a copy of the lab folder, made and cleaned as in <a
+href="#from-the-lab-folder-to-your-report">From the lab folder to your
+report</a> above.</p>
 </main>
 <footer class="wrap">
   <p>Economics Research and Communication (module of NA310G, Economics, Advanced Course), Magnus Lodefalk's part:
