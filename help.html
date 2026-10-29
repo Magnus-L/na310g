@@ -168,27 +168,19 @@ include M (divisions 69–75)?</strong> Yes. The line in
 <code>|</code> means “or”, so it covers J and K (58–66) and M (69–75).
 Use it as it is.</p>
 <p><strong>Should I drop the firms outside my industry and geography,
-and before or after I make my variables?</strong> Yes: keep only your
-industry and your geography (<code>keep if industry == ...</code>,
-<code>drop if inlist(ser_laen, ...)</code>). For a variable computed row
-by row, such as vacancies per employee, the order makes no difference to
-its values. Still, select the sample first and <code>count</code> after
-each step: section 4 of the report shows the selection step by step,
-from the original N to your final N. Count also the firm-years that get
-a missing value (for example zero employees), since they drop out of the
-regression.</p>
-<p><strong>Some values of a variable I want to log are negative. Drop
-them or keep the variable in levels?</strong> Both can be defended; the
-brief asks you to choose, report how many firm-years it concerns, and
-say why. Logs are usual for skewed measures such as value added per
-employee: then look at the firm-years you lose before you drop them (how
-many firms, the same firms again and again, how they differ in size,
-industry and year) and report it. Levels keep every firm-year but give a
-skewed variable, read per krona. Strongest: one as your main model, the
-other as a robustness check. And if it is a control, ask whether it is
-built from the same accounts as your outcome (value added and net sales
-both start from sales): part of their correlation is then
-mechanical.</p>
+and when?</strong> Your sample is your industry and your geography.
+Section 4 of the report asks for the selection step by step, from the
+original N to your final N, so ask yourself at each step: how many
+observations go, and why? And which firm-years will silently drop out of
+the regression later?</p>
+<p><strong>A variable I want to log has negative or zero values. What do
+I do?</strong> The brief asks you to decide, report how many firm-years
+it concerns, and say why; there is no single right answer. Questions to
+ask yourself: what does a negative value mean in the accounts? Which
+firms would you lose, and would losing them change what your sample
+represents? How skewed is the variable? Would your conclusion change
+with the other choice? And for a control: is it built from the same
+accounts as your outcome?</p>
 </main>
 <footer class="wrap">
   <p>Economics Research and Communication (module of NA310G, Economics, Advanced Course), Magnus Lodefalk's part:
