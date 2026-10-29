@@ -161,11 +161,39 @@ where the misunderstanding is.</li>
 files?</strong> In a copy of the lab folder, made and cleaned as in <a
 href="#from-the-lab-folder-to-your-report">From the lab folder to your
 report</a> above.</p>
+<p><strong>Professional services is J + K + M. Does the lab’s grouping
+include M (divisions 69–75)?</strong> Yes. The line in
+<code>2_sample_vars.do</code> reads
+<code>inrange(division, 58, 66) | inrange(division, 69, 75)</code>;
+<code>|</code> means “or”, so it covers J and K (58–66) and M (69–75).
+Use it as it is.</p>
+<p><strong>Should I drop the firms outside my industry and geography,
+and before or after I make my variables?</strong> Yes: keep only your
+industry and your geography (<code>keep if industry == ...</code>,
+<code>drop if inlist(ser_laen, ...)</code>). For a variable computed row
+by row, such as vacancies per employee, the order makes no difference to
+its values. Still, select the sample first and <code>count</code> after
+each step: section 4 of the report shows the selection step by step,
+from the original N to your final N. Count also the firm-years that get
+a missing value (for example zero employees), since they drop out of the
+regression.</p>
+<p><strong>Some values of a variable I want to log are negative. Drop
+them or keep the variable in levels?</strong> Both can be defended; the
+brief asks you to choose, report how many firm-years it concerns, and
+say why. Logs are usual for skewed measures such as value added per
+employee: then look at the firm-years you lose before you drop them (how
+many firms, the same firms again and again, how they differ in size,
+industry and year) and report it. Levels keep every firm-year but give a
+skewed variable, read per krona. Strongest: one as your main model, the
+other as a robustness check. And if it is a control, ask whether it is
+built from the same accounts as your outcome (value added and net sales
+both start from sales): part of their correlation is then
+mechanical.</p>
 </main>
 <footer class="wrap">
   <p>Economics Research and Communication (module of NA310G, Economics, Advanced Course), Magnus Lodefalk's part:
   applied econometrics in Stata. Örebro University, autumn 2026. Teacher: <a href="https://magnuslodefalk.com">Magnus Lodefalk</a>.</p>
-  <p>Written in plain text and built with pandoc. Updated 2026-10-27.</p>
+  <p>Written in plain text and built with pandoc. Updated 2026-10-29.</p>
 </footer>
 <script>
 document.querySelectorAll("pre").forEach(function (pre) {
