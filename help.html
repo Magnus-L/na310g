@@ -197,11 +197,39 @@ two would you then find even if size had no effect at all? And why does
 the brief measure firm size by net sales for this outcome, but by
 employees for the others? If you still add it, show the model with and
 without it.</p>
+<p><strong>How do I get the correlation matrix into Word as a
+table?</strong> The lab’s <code>pwcorr</code> (do-file 3, B7) writes
+only to the log. Add this after B7, with your own variables in place of
+the lab’s:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode stata"><code class="sourceCode stata"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>correlate ln_fin ln_emp ln_cap ai_firm</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">matrix</span> C = <span class="fu">r</span>(C)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>putdocx <span class="kw">clear</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>putdocx <span class="kw">begin</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>putdocx paragraph</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>putdocx <span class="bn">text</span> (<span class="st">&quot;Table 3. Correlations&quot;</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>putdocx <span class="kw">table</span> <span class="fu">corr</span> = <span class="fu">matrix</span>(C), <span class="ot">rownames</span> <span class="ot">colnames</span> nformat(%9.2f)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>putdocx <span class="kw">save</span> <span class="st">&quot;$root/output/tables/correlations.docx&quot;</span>, <span class="kw">replace</span></span></code></pre></div>
+<p><code>correlate</code> uses the same observations for every variable,
+as your regression does. In Word, replace the variable names with labels
+and add a note below the table.</p>
+<p><strong>My regression table shows the number of observations but not
+the number of firms. Is that a problem?</strong> No. Give the number of
+firms in the note under the table (“N = … firm-years, … firms,
+2018–2024”), as the example report does. If you want a row instead, in
+E5 of <code>4_regressions.do</code>: add <code>e(N_clust)</code> to the
+pooled-OLS <code>collect</code> line and <code>e(N_g)</code> to the FE
+and RE lines; add the line
+<code>collect recode result N_clust = N_g</code>; add
+<code>N_g "Firms"</code> to <code>collect label levels result</code>;
+and write <code>N_g</code> after <code>N</code> in
+<code>collect style cell result[N]</code> and in
+<code>collect layout</code>.</p>
 </main>
 <footer class="wrap">
   <p>Economics Research and Communication (module of NA310G, Economics, Advanced Course), Magnus Lodefalk's part:
   applied econometrics in Stata. Örebro University, autumn 2026. Teacher: <a href="https://magnuslodefalk.com">Magnus Lodefalk</a>.</p>
-  <p>Written in plain text and built with pandoc. Updated 2026-11-01.</p>
+  <p>Written in plain text and built with pandoc. Updated 2026-11-04.</p>
 </footer>
 <script>
 document.querySelectorAll("pre").forEach(function (pre) {
